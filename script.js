@@ -20,13 +20,20 @@ const surpriseWorldClose = document.getElementById("surpriseWorldClose");
 
 const introOverlay = document.getElementById("introOverlay");
 const introFloatingLayer = document.getElementById("introFloatingLayer");
+const introLockCard = document.getElementById("introLockCard");
+const introCardStars = document.getElementById("introCardStars");
 const swipeShell = document.getElementById("swipeShell");
 const swipeFill = document.getElementById("swipeFill");
 const swipeThumb = document.getElementById("swipeThumb");
+const swipeProgressText = document.getElementById("swipeProgressText");
 const introCinematic = document.getElementById("introCinematic");
 const introGoldParticles = document.getElementById("introGoldParticles");
 const mainExperience = document.getElementById("mainExperience");
 const floatingLayer = document.getElementById("floatingLayer");
+const hero = document.getElementById("hero");
+const heroCard = document.getElementById("heroCard");
+const heroMagicLayer = document.getElementById("heroMagicLayer");
+const heroScrollBtn = document.getElementById("heroScrollBtn");
 
 const birthdayMessage =
   "Bhanu, on your birthday I just want to remind you how special you are. " +
@@ -47,6 +54,7 @@ let worldSwipeProgress = 0;
 let worldSwipeDragging = false;
 let worldSwipeCompleted = false;
 let surpriseWorldParticlesReady = false;
+let finalCelebrationTimer = null;
 
 function createFloatingParticles(layer, baseClass, items) {
   if (!layer) {
@@ -85,6 +93,84 @@ function initFloatingLayers() {
 
   createFloatingParticles(floatingLayer, "float-item", mainItems);
   createFloatingParticles(introFloatingLayer, "intro-particle", introItems);
+}
+
+function initIntroCardEffects() {
+  if (introCardStars && introCardStars.childElementCount === 0) {
+    for (let i = 0; i < 16; i += 1) {
+      const star = document.createElement("span");
+      star.className = "intro-card-star";
+      star.style.left = `${8 + Math.random() * 84}%`;
+      star.style.top = `${8 + Math.random() * 80}%`;
+      star.style.setProperty("--size", `${2 + Math.random() * 3.2}px`);
+      star.style.setProperty("--duration", `${2.6 + Math.random() * 2.8}s`);
+      star.style.setProperty("--delay", `${-Math.random() * 3.5}s`);
+      introCardStars.appendChild(star);
+    }
+  }
+
+  if (!introLockCard || !window.matchMedia("(pointer:fine)").matches) {
+    return;
+  }
+
+  const resetCardTilt = () => {
+    introLockCard.style.setProperty("--intro-tilt-x", "0deg");
+    introLockCard.style.setProperty("--intro-tilt-y", "0deg");
+  };
+
+  introLockCard.addEventListener("pointermove", (event) => {
+    const rect = introLockCard.getBoundingClientRect();
+    const relativeX = (event.clientX - rect.left) / rect.width;
+    const relativeY = (event.clientY - rect.top) / rect.height;
+    const tiltX = (0.5 - relativeY) * 7;
+    const tiltY = (relativeX - 0.5) * 9;
+    introLockCard.style.setProperty("--intro-tilt-x", `${tiltX.toFixed(2)}deg`);
+    introLockCard.style.setProperty("--intro-tilt-y", `${tiltY.toFixed(2)}deg`);
+  });
+
+  introLockCard.addEventListener("pointerleave", resetCardTilt);
+  introLockCard.addEventListener("pointercancel", resetCardTilt);
+}
+
+function initHeroAnimation() {
+  if (heroMagicLayer && heroMagicLayer.childElementCount === 0) {
+    for (let i = 0; i < 22; i += 1) {
+      const star = document.createElement("span");
+      star.className = "hero-star";
+      star.style.left = `${16 + Math.random() * 68}%`;
+      star.style.top = `${20 + Math.random() * 60}%`;
+      star.style.setProperty("--size", `${3 + Math.random() * 5}px`);
+      star.style.setProperty("--drift", `${-36 + Math.random() * 72}px`);
+      star.style.setProperty("--duration", `${3.2 + Math.random() * 3.4}s`);
+      star.style.setProperty("--delay", `${-Math.random() * 4.5}s`);
+      heroMagicLayer.appendChild(star);
+    }
+  }
+
+  if (!heroCard || !window.matchMedia("(pointer:fine)").matches) {
+    return;
+  }
+
+  const resetTilt = () => {
+    heroCard.style.setProperty("--tilt-x", "0deg");
+    heroCard.style.setProperty("--tilt-y", "0deg");
+    heroCard.classList.remove("is-tilting");
+  };
+
+  heroCard.addEventListener("pointermove", (event) => {
+    const rect = heroCard.getBoundingClientRect();
+    const relativeX = (event.clientX - rect.left) / rect.width;
+    const relativeY = (event.clientY - rect.top) / rect.height;
+    const tiltX = (0.5 - relativeY) * 9;
+    const tiltY = (relativeX - 0.5) * 11;
+
+    heroCard.style.setProperty("--tilt-x", `${tiltX.toFixed(2)}deg`);
+    heroCard.style.setProperty("--tilt-y", `${tiltY.toFixed(2)}deg`);
+    heroCard.classList.add("is-tilting");
+  });
+
+  heroCard.addEventListener("pointerleave", resetTilt);
+  heroCard.addEventListener("pointercancel", resetTilt);
 }
 
 function initSurpriseWorldParticles() {
@@ -247,17 +333,22 @@ function triggerFinalCelebration() {
     return;
   }
 
+  if (finalCelebrationTimer) {
+    window.clearTimeout(finalCelebrationTimer);
+    finalCelebrationTimer = null;
+  }
+
   finalCelebration.classList.add("active");
   finalCelebration.setAttribute("aria-hidden", "false");
 
+  // Keep the final wish ready, but do not auto-scroll the page.
+  // This avoids sudden jump/flashing after cake cut.
   finalWish.classList.add("visible");
-  window.setTimeout(() => {
-    finalWish.scrollIntoView({ behavior: "smooth", block: "center" });
-  }, 350);
 
-  window.setTimeout(() => {
+  finalCelebrationTimer = window.setTimeout(() => {
     finalCelebration.classList.remove("active");
     finalCelebration.setAttribute("aria-hidden", "true");
+    finalCelebrationTimer = null;
   }, 5800);
 }
 
@@ -323,6 +414,9 @@ function setSwipeProgress(progress, animate) {
   swipeThumb.style.transform = `translateX(${travel * swipeProgress}px)`;
   swipeFill.style.width = `${swipeProgress * 100}%`;
   swipeShell.setAttribute("aria-valuenow", String(Math.round(swipeProgress * 100)));
+  if (swipeProgressText) {
+    swipeProgressText.textContent = `${Math.round(swipeProgress * 100)}%`;
+  }
 
   if (!swipeCompleted) {
     introOverlay.style.transform = `scale(${1 + swipeProgress * 0.015})`;
@@ -383,6 +477,16 @@ function spawnIntroGoldParticles(count) {
 }
 
 function showMainPage() {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+
+  if (hero) {
+    hero.scrollIntoView({ behavior: "auto", block: "start" });
+  } else {
+    window.scrollTo(0, 0);
+  }
+
   if (mainExperience) {
     mainExperience.classList.add("entered");
   }
@@ -690,6 +794,13 @@ function setupWorldSwipe() {
 }
 
 function setupMainInteractions() {
+  if (heroScrollBtn && messageSection) {
+    heroScrollBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      messageSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   if (cake) {
     cake.addEventListener("click", lightCandles);
     cake.addEventListener("keydown", (event) => {
@@ -707,6 +818,8 @@ function setupMainInteractions() {
 
 function init() {
   initFloatingLayers();
+  initIntroCardEffects();
+  initHeroAnimation();
   revealOnScroll();
   setupMainInteractions();
   setupIntroSwipe();
