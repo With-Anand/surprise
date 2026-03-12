@@ -17,15 +17,21 @@
   <div class="intro-overlay active" id="introOverlay">
     <div class="intro-floating-layer" id="introFloatingLayer" aria-hidden="true"></div>
 
-    <div class="intro-lock-card">
-      <h1>HAPPY BIRTHDAY <span class="name-highlight">BHANU</span></h1>
-      <p>A magical world is waiting for you</p>
+    <div class="intro-lock-card" id="introLockCard">
+      <div class="intro-card-stars" id="introCardStars" aria-hidden="true"></div>
+      <p class="intro-kicker">For Someone Truly Special</p>
+      <h1 class="intro-title">
+        <span class="intro-title-line">HAPPY BIRTHDAY</span>
+        <span class="intro-title-line intro-title-name">BHANU</span>
+      </h1>
+      <p class="intro-subtitle">A magical world is waiting for you</p>
 
       <div class="swipe-shell" id="swipeShell" role="slider" aria-label="Swipe to enter the birthday world"
         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
         <div class="swipe-fill" id="swipeFill"></div>
         <div class="swipe-track-sparkles" aria-hidden="true"></div>
         <span class="swipe-label">Swipe to Enter the World ✨</span>
+        <span class="swipe-progress" id="swipeProgressText">0%</span>
         <button class="swipe-thumb" id="swipeThumb" aria-label="Swipe handle"></button>
       </div>
     </div>
@@ -45,15 +51,22 @@
   <div id="mainExperience" class="main-experience">
     <div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
     <div class="glassy-pop-up" id="glassyPopUp" aria-hidden="true">
-      <span>✨</span>
+      <span class="badge-icon">✨</span>
       <p>A dreamy surprise is waiting below</p>
+      <span class="badge-ping" aria-hidden="true"></span>
     </div>
 
     <header class="hero" id="hero">
-      <div class="glass-card">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="hero-light-rays" aria-hidden="true"></div>
+      <span class="hero-orbit hero-orbit-one" aria-hidden="true"></span>
+      <span class="hero-orbit hero-orbit-two" aria-hidden="true"></span>
+      <div class="hero-magic-layer" id="heroMagicLayer" aria-hidden="true"></div>
+      <div class="glass-card hero-card" id="heroCard">
         <p class="hero-tag">For Someone Truly Special</p>
-        <h1>HAPPY BIRTHDAY <span class="name-highlight">BHANU</span></h1>
+        <h1 class="hero-title">HAPPY BIRTHDAY <span class="name-highlight">BHANU</span></h1>
         <p class="hero-subtitle">A small magical birthday story made for you</p>
+        <a class="hero-scroll-btn" id="heroScrollBtn" href="#messageSection">✨ Start the Magic</a>
       </div>
     </header>
 
@@ -240,7 +253,7 @@
         </div>
       </div>
     </div>
-  </div>   
+  </div>
 
   <script src="script.js"></script>
 </body>
