@@ -1,294 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday Bhanu</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="intro-pending">
-    <div class="intro-overlay active" id="introOverlay">
-      <div class="intro-floating-layer" id="introFloatingLayer" aria-hidden="true"></div>
 
-      <div class="intro-lock-card">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Bhanu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="intro-pending">
+  <div class="intro-overlay active" id="introOverlay">
+    <div class="intro-floating-layer" id="introFloatingLayer" aria-hidden="true"></div>
+
+    <div class="intro-lock-card">
+      <h1>HAPPY BIRTHDAY <span class="name-highlight">BHANU</span></h1>
+      <p>A magical world is waiting for you</p>
+
+      <div class="swipe-shell" id="swipeShell" role="slider" aria-label="Swipe to enter the birthday world"
+        aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="swipe-fill" id="swipeFill"></div>
+        <div class="swipe-track-sparkles" aria-hidden="true"></div>
+        <span class="swipe-label">Swipe to Enter the World ✨</span>
+        <button class="swipe-thumb" id="swipeThumb" aria-label="Swipe handle"></button>
+      </div>
+    </div>
+
+    <div class="intro-cinematic" id="introCinematic" aria-hidden="true">
+      <div class="intro-gold-particles" id="introGoldParticles" aria-hidden="true"></div>
+      <div class="intro-fireworks" aria-hidden="true">
+        <span class="intro-firework ifw1"></span>
+        <span class="intro-firework ifw2"></span>
+        <span class="intro-firework ifw3"></span>
+        <span class="intro-firework ifw4"></span>
+      </div>
+      <h2>HAPPY BIRTHDAY <span class="name-highlight">BHANU</span></h2>
+    </div>
+  </div>
+
+  <div id="mainExperience" class="main-experience">
+    <div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
+    <div class="glassy-pop-up" id="glassyPopUp" aria-hidden="true">
+      <span>✨</span>
+      <p>A dreamy surprise is waiting below</p>
+    </div>
+
+    <header class="hero" id="hero">
+      <div class="glass-card">
+        <p class="hero-tag">For Someone Truly Special</p>
         <h1>HAPPY BIRTHDAY <span class="name-highlight">BHANU</span></h1>
-        <p>A magical world is waiting for you</p>
-
-        <div
-          class="swipe-shell"
-          id="swipeShell"
-          role="slider"
-          aria-label="Swipe to enter the birthday world"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          aria-valuenow="0"
-        >
-          <div class="swipe-fill" id="swipeFill"></div>
-          <div class="swipe-track-sparkles" aria-hidden="true"></div>
-          <span class="swipe-label">Swipe to Enter the World ✨</span>
-          <button class="swipe-thumb" id="swipeThumb" aria-label="Swipe handle"></button>
-        </div>
+        <p class="hero-subtitle">A small magical birthday story made for you</p>
       </div>
+    </header>
 
-      <div class="intro-cinematic" id="introCinematic" aria-hidden="true">
-        <div class="intro-gold-particles" id="introGoldParticles" aria-hidden="true"></div>
-        <div class="intro-fireworks" aria-hidden="true">
-          <span class="intro-firework ifw1"></span>
-          <span class="intro-firework ifw2"></span>
-          <span class="intro-firework ifw3"></span>
-          <span class="intro-firework ifw4"></span>
+    <main>
+      <section class="content-section reveal-on-scroll" id="messageSection">
+        <h2>A Message From My Heart</h2>
+        <div class="message-card">
+          <p id="typedMessage"></p>
+          <span id="typingCursor" aria-hidden="true">|</span>
         </div>
-        <h2>HAPPY BIRTHDAY <span class="name-highlight">BHANU</span></h2>
+      </section>
+
+      <section class="content-section reveal-on-scroll" id="memoriesSection">
+        <h2>Photo Memories</h2>
+        <div class="gallery-grid">
+          <figure class="memory-item">
+            <img src="assets/surprise/orbit-09.jpg" alt="Warm evening memory together" />
+            <figcaption>The evening that felt like a fairytale</figcaption>
+          </figure>
+          <figure class="memory-item">
+            <img src="assets/surprise/ABC77B56-BBA1-4213-95C2-517B4D03722C_1_201_a.jpeg"
+              alt="Romantic portrait memory" />
+            <figcaption>Soft smiles and unforgettable moments</figcaption>
+          </figure>
+          <figure class="memory-item">
+            <img src="assets/surprise/o1.jpeg"
+              alt="Sunset memory photo" />
+            <figcaption>Sunset skies and endless conversations</figcaption>
+          </figure>
+          <figure class="memory-item">
+            <img src="assets/surprise/orbit-02.jpg"
+              alt="Flower bouquet memory" />
+            <figcaption>The day every flower looked jealous of you</figcaption>
+          </figure>
+          
+        </div>
+      </section>
+
+      <section class="content-section reveal-on-scroll" id="cakeSection">
+        <h2>Cake Celebration</h2>
+        <p class="cake-tip" id="cakeTip">Tap the cake to light candles</p>
+
+        <div class="cake-scene" id="cakeScene">
+          <div class="cake-sparkles" id="cakeSparkles" aria-hidden="true"></div>
+          <div class="knife" id="knife" aria-hidden="true"></div>
+
+          <div class="cake" id="birthdayCake" role="button" tabindex="0"
+            aria-label="Birthday cake. Tap to light candles.">
+            <div class="candles">
+              <div class="candle"><span class="flame"></span></div>
+              <div class="candle"><span class="flame"></span></div>
+              <div class="candle"><span class="flame"></span></div>
+            </div>
+
+            <div class="cake-top">
+              <div class="cake-half left"></div>
+              <div class="cake-half right"></div>
+            </div>
+            <div class="cake-body">
+              <div class="cake-half left"></div>
+              <div class="cake-half right"></div>
+            </div>
+            <div class="cake-plate"></div>
+          </div>
+
+          <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+          <div class="cake-fireworks-layer" id="cakeFireworksLayer" aria-hidden="true"></div>
+        </div>
+
+        <button class="cut-cake-button" id="cutCakeBtn" hidden>Cut the Cake 🔪</button>
+        <div class="balloon-layer" id="balloonLayer" aria-hidden="true"></div>
+      </section>
+
+      <section class="content-section reveal-on-scroll" id="surpriseGatewaySection">
+        <h2>Swipe For Secret Surprise</h2>
+        <p class="surprise-gateway-text">
+          Cake ke baad ek aur magical world tumhara wait kar raha hai.
+        </p>
+
+        <div class="world-swipe-card">
+          <div class="world-swipe-shell" id="worldSwipeShell" role="slider"
+            aria-label="Swipe to open secret surprise world" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="world-swipe-fill" id="worldSwipeFill"></div>
+            <div class="world-swipe-glints" aria-hidden="true"></div>
+            <span class="world-swipe-label">Swipe to Open Surprise World ✨</span>
+            <button class="world-swipe-thumb" id="worldSwipeThumb"
+              aria-label="Swipe handle for surprise world"></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section wish-section" id="finalWish">
+        <h2>Final Wish</h2>
+        <p>
+          May your life always be filled with happiness, beautiful memories, love, and endless
+          smiles.
+        </p>
+      </section>
+    </main>
+
+    <div class="final-celebration" id="finalCelebration" aria-hidden="true">
+      <div class="spotlight"></div>
+      <div class="fireworks" aria-hidden="true">
+        <span class="firework fw1"></span>
+        <span class="firework fw2"></span>
+        <span class="firework fw3"></span>
+        <span class="firework fw4"></span>
+        <span class="firework fw5"></span>
       </div>
+      <h2>HAPPY BIRTHDAY <span class="name-highlight">BHANU</span> 🎉</h2>
+    </div>
+  </div>
+
+  <div class="surprise-world" id="surpriseWorld" aria-hidden="true">
+    <div class="surprise-world-layer" id="surpriseWorldLayer" aria-hidden="true"></div>
+
+    <button class="surprise-world-close" id="surpriseWorldClose" aria-label="Close surprise world">
+      Close ✕
+    </button>
+
+    <div class="surprise-world-cinematic">
+      <p class="surprise-world-tag">A world made only for you</p>
+      <h2>HAPPYEST BIRTHDAY <span class="bhutkan-highlight">BHUTKAN</span></h2>
     </div>
 
-    <div id="mainExperience" class="main-experience">
-      <div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
-      <div class="glassy-pop-up" id="glassyPopUp" aria-hidden="true">
-        <span>✨</span>
-        <p>A dreamy surprise is waiting below</p>
-      </div>
-
-      <header class="hero" id="hero">
-        <div class="glass-card">
-          <p class="hero-tag">For Someone Truly Special</p>
-          <h1>HAPPY BIRTHDAY <span class="name-highlight">BHANU</span></h1>
-          <p class="hero-subtitle">A small magical birthday story made for you</p>
-        </div>
-      </header>
-
-      <main>
-        <section class="content-section reveal-on-scroll" id="messageSection">
-          <h2>A Message From My Heart</h2>
-          <div class="message-card">
-            <p id="typedMessage"></p>
-            <span id="typingCursor" aria-hidden="true">|</span>
-          </div>
-        </section>
-
-        <section class="content-section reveal-on-scroll" id="memoriesSection">
-          <h2>Photo Memories</h2>
-          <div class="gallery-grid">
-            <figure class="memory-item">
-              <img
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
-                alt="Warm evening memory together"
-              />
-              <figcaption>The evening that felt like a fairytale</figcaption>
-            </figure>
-            <figure class="memory-item">
-              <img
-                src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80"
-                alt="Romantic portrait memory"
-              />
-              <figcaption>Soft smiles and unforgettable moments</figcaption>
-            </figure>
-            <figure class="memory-item">
-              <img
-                src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=80"
-                alt="Sunset memory photo"
-              />
-              <figcaption>Sunset skies and endless conversations</figcaption>
-            </figure>
-            <figure class="memory-item">
-              <img
-                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80"
-                alt="Flower bouquet memory"
-              />
-              <figcaption>The day every flower looked jealous of you</figcaption>
-            </figure>
-            <figure class="memory-item">
-              <img
-                src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80"
-                alt="Coffee date memory"
-              />
-              <figcaption>Simple dates that became precious memories</figcaption>
-            </figure>
-            <figure class="memory-item">
-              <img
-                src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80"
-                alt="Celebration memory with lights"
-              />
-              <figcaption>Moments glowing brighter than city lights</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section class="content-section reveal-on-scroll" id="cakeSection">
-          <h2>Cake Celebration</h2>
-          <p class="cake-tip" id="cakeTip">Tap the cake to light candles</p>
-
-          <div class="cake-scene" id="cakeScene">
-            <div class="cake-sparkles" id="cakeSparkles" aria-hidden="true"></div>
-            <div class="knife" id="knife" aria-hidden="true"></div>
-
-            <div
-              class="cake"
-              id="birthdayCake"
-              role="button"
-              tabindex="0"
-              aria-label="Birthday cake. Tap to light candles."
-            >
-              <div class="candles">
-                <div class="candle"><span class="flame"></span></div>
-                <div class="candle"><span class="flame"></span></div>
-                <div class="candle"><span class="flame"></span></div>
-              </div>
-
-              <div class="cake-top">
-                <div class="cake-half left"></div>
-                <div class="cake-half right"></div>
-              </div>
-              <div class="cake-body">
-                <div class="cake-half left"></div>
-                <div class="cake-half right"></div>
-              </div>
-              <div class="cake-plate"></div>
-            </div>
-
-            <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
-          </div>
-
-          <button class="cut-cake-button" id="cutCakeBtn" hidden>Cut the Cake 🔪</button>
-          <div class="balloon-layer" id="balloonLayer" aria-hidden="true"></div>
-        </section>
-
-        <section class="content-section reveal-on-scroll" id="surpriseGatewaySection">
-          <h2>Swipe For Secret Surprise</h2>
-          <p class="surprise-gateway-text">
-            Cake ke baad ek aur magical world tumhara wait kar raha hai.
-          </p>
-
-          <div class="world-swipe-card">
-            <div
-              class="world-swipe-shell"
-              id="worldSwipeShell"
-              role="slider"
-              aria-label="Swipe to open secret surprise world"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              aria-valuenow="0"
-            >
-              <div class="world-swipe-fill" id="worldSwipeFill"></div>
-              <div class="world-swipe-glints" aria-hidden="true"></div>
-              <span class="world-swipe-label">Swipe to Open Surprise World ✨</span>
-              <button
-                class="world-swipe-thumb"
-                id="worldSwipeThumb"
-                aria-label="Swipe handle for surprise world"
-              ></button>
-            </div>
-          </div>
-        </section>
-
-        <section class="content-section wish-section" id="finalWish">
-          <h2>Final Wish</h2>
-          <p>
-            May your life always be filled with happiness, beautiful memories, love, and endless
-            smiles.
-          </p>
-        </section>
-      </main>
-
-      <div class="final-celebration" id="finalCelebration" aria-hidden="true">
-        <div class="spotlight"></div>
-        <div class="fireworks" aria-hidden="true">
-          <span class="firework fw1"></span>
-          <span class="firework fw2"></span>
-          <span class="firework fw3"></span>
-          <span class="firework fw4"></span>
-          <span class="firework fw5"></span>
-        </div>
-        <h2>HAPPY BIRTHDAY <span class="name-highlight">BHANU</span> 🎉</h2>
-      </div>
+    <div class="surprise-world-fireworks" aria-hidden="true">
+      <span class="surprise-firework sf1"></span>
+      <span class="surprise-firework sf2"></span>
+      <span class="surprise-firework sf3"></span>
+      <span class="surprise-firework sf4"></span>
     </div>
 
-    <div class="surprise-world" id="surpriseWorld" aria-hidden="true">
-      <div class="surprise-world-layer" id="surpriseWorldLayer" aria-hidden="true"></div>
-
-      <button class="surprise-world-close" id="surpriseWorldClose" aria-label="Close surprise world">
-        Close ✕
-      </button>
-
-      <div class="surprise-world-cinematic">
-        <p class="surprise-world-tag">A world made only for you</p>
-        <h2>HAPPYEST BIRTHDAY <span class="bhutkan-highlight">BHUTKAN</span></h2>
-      </div>
-
-      <div class="surprise-world-fireworks" aria-hidden="true">
-        <span class="surprise-firework sf1"></span>
-        <span class="surprise-firework sf2"></span>
-        <span class="surprise-firework sf3"></span>
-        <span class="surprise-firework sf4"></span>
-      </div>
-
-      <div class="surprise-world-orbit-wrap">
-        <div class="surprise-orbit-scene">
-          <div class="orbit-ring orbit-outer">
-            <div class="orbit-item" style="--i:0">
-              <img src="assets/surprise/orbit-01.jpg" alt="Bhanu memory photo 1" />
-            </div>
-            <div class="orbit-item" style="--i:1">
-              <img src="assets/surprise/orbit-02.jpg" alt="Bhanu memory photo 2" />
-            </div>
-            <div class="orbit-item" style="--i:2">
-              <img src="assets/surprise/orbit-03.jpg" alt="Bhanu memory photo 3" />
-            </div>
-            <div class="orbit-item" style="--i:3">
-              <img src="assets/surprise/orbit-04.jpg" alt="Bhanu memory photo 4" />
-            </div>
-            <div class="orbit-item" style="--i:4">
-              <img src="assets/surprise/orbit-05.jpg" alt="Bhanu memory photo 5" />
-            </div>
-            <div class="orbit-item" style="--i:5">
-              <img src="assets/surprise/orbit-06.jpg" alt="Bhanu memory photo 6" />
-            </div>
-            <div class="orbit-item" style="--i:6">
-              <img src="assets/surprise/orbit-07.jpg" alt="Bhanu memory photo 7" />
-            </div>
-            <div class="orbit-item" style="--i:7">
-              <img src="assets/surprise/orbit-08.jpg" alt="Bhanu memory photo 8" />
-            </div>
+    <div class="surprise-world-orbit-wrap">
+      <div class="surprise-orbit-scene">
+        <div class="orbit-ring orbit-outer">
+          <div class="orbit-item" style="--i:0">
+            <img src="assets/surprise/orbit-01.jpg" alt="Bhanu memory photo 1" />
           </div>
-
-          <div class="orbit-ring orbit-inner">
-            <div class="orbit-item" style="--i:0">
-              <img src="assets/surprise/orbit-09.jpg" alt="Bhanu memory photo 9" />
-            </div>
-            <div class="orbit-item" style="--i:1">
-              <img src="assets/surprise/orbit-10.jpg" alt="Bhanu memory photo 10" />
-            </div>
-            <div class="orbit-item" style="--i:2">
-              <img src="assets/surprise/orbit-11.jpg" alt="Bhanu memory photo 11" />
-            </div>
-            <div class="orbit-item" style="--i:3">
-              <img src="assets/surprise/orbit-03.jpg" alt="Bhanu memory photo 3 repeat" />
-            </div>
-            <div class="orbit-item" style="--i:4">
-              <img src="assets/surprise/orbit-06.jpg" alt="Bhanu memory photo 6 repeat" />
-            </div>
-            <div class="orbit-item" style="--i:5">
-              <img src="assets/surprise/orbit-01.jpg" alt="Bhanu memory photo 1 repeat" />
-            </div>
+          <div class="orbit-item" style="--i:1">
+            <img src="assets/surprise/orbit-02.jpg" alt="Bhanu memory photo 2" />
           </div>
-
-          <div class="orbit-center">
-            <img
-              src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80"
-              alt="Center special photo"
-            />
-            <span>Bhutkan</span>
+          <div class="orbit-item" style="--i:2">
+            <img src="assets/surprise/orbit-03.jpg" alt="Bhanu memory photo 3" />
           </div>
+          <div class="orbit-item" style="--i:3">
+            <img src="assets/surprise/o4.jpeg" alt="Bhanu memory photo 4" />
+          </div>
+          <div class="orbit-item" style="--i:4">
+            <img src="assets/surprise/orbit-05.jpg" alt="Bhanu memory photo 5" />
+          </div>
+          <div class="orbit-item" style="--i:5">
+            <img src="assets/surprise/orbit-06.jpg" alt="Bhanu memory photo 6" />
+          </div>
+          <div class="orbit-item" style="--i:6">
+            <img src="assets/surprise/orbit-07.jpg" alt="Bhanu memory photo 7" />
+          </div>
+          <div class="orbit-item" style="--i:7">
+            <img src="assets/surprise/orbit-08.jpg" alt="Bhanu memory photo 8" />
+          </div>
+        </div>
+
+        <div class="orbit-ring orbit-inner">
+          <div class="orbit-item" style="--i:0">
+            <img src="assets/surprise/orbit-09.jpg" alt="Bhanu memory photo 9" />
+          </div>
+          <div class="orbit-item" style="--i:1">
+            <img src="assets/surprise/orbit-10.jpg" alt="Bhanu memory photo 10" />
+          </div>
+          <div class="orbit-item" style="--i:2">
+            <img src="assets/surprise/orbit-11.jpg" alt="Bhanu memory photo 11" />
+          </div>
+          <div class="orbit-item" style="--i:3">
+            <img src="assets/surprise/orbit-03.jpg" alt="Bhanu memory photo 3 repeat" />
+          </div>
+          <div class="orbit-item" style="--i:4">
+            <img src="assets/surprise/orbit-06.jpg" alt="Bhanu memory photo 6 repeat" />
+          </div>
+          <div class="orbit-item" style="--i:5">
+            <img src="assets/surprise/orbit-01.jpg" alt="Bhanu memory photo 1 repeat" />
+          </div>
+        </div>
+
+        <div class="orbit-center">
+          <img src="assets/surprise/Main3.jpeg" alt="Center special photo" />
+          <span>Bhutkan</span>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -2134,10 +2134,56 @@ main > .content-section:first-child {
 }
 
 .cake-sparkles,
-.confetti-layer {
+.confetti-layer,
+.cake-fireworks-layer {
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.cake-fireworks-layer {
+  z-index: 4;
+}
+
+.cake-firework-burst {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0;
+  color: var(--fw-color);
+  transform: translate(-50%, -50%) scale(0.2) rotate(var(--fw-rot));
+  box-shadow:
+    0 -32px 0 0 currentColor,
+    22px -22px 0 0 currentColor,
+    32px 0 0 0 currentColor,
+    22px 22px 0 0 currentColor,
+    0 32px 0 0 currentColor,
+    -22px 22px 0 0 currentColor,
+    -32px 0 0 0 currentColor,
+    -22px -22px 0 0 currentColor;
+  filter:
+    drop-shadow(0 0 7px color-mix(in srgb, var(--fw-color), #ffffff 25%))
+    drop-shadow(0 0 18px color-mix(in srgb, var(--fw-color), #ffffff 15%));
+  animation: cakeFireworkBurst 1s ease-out forwards;
+}
+
+@keyframes cakeFireworkBurst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2) rotate(var(--fw-rot));
+  }
+  14% {
+    opacity: 1;
+  }
+  64% {
+    opacity: 0.92;
+    transform: translate(-50%, -50%) scale(var(--fw-scale)) rotate(var(--fw-rot));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(calc(var(--fw-scale) + 0.42)) rotate(var(--fw-rot));
+  }
 }
 
 .mini-sparkle {

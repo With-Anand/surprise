@@ -7,6 +7,7 @@ const cakeTip = document.getElementById("cakeTip");
 const cutCakeBtn = document.getElementById("cutCakeBtn");
 const cakeSparkles = document.getElementById("cakeSparkles");
 const confettiLayer = document.getElementById("confettiLayer");
+const cakeFireworksLayer = document.getElementById("cakeFireworksLayer");
 const balloonLayer = document.getElementById("balloonLayer");
 const finalCelebration = document.getElementById("finalCelebration");
 const finalWish = document.getElementById("finalWish");
@@ -198,6 +199,28 @@ function burstConfetti() {
   }
 }
 
+function burstCakeFireworks(totalBursts) {
+  if (!cakeFireworksLayer) {
+    return;
+  }
+
+  const colors = ["#ffd96d", "#ff87c0", "#b388ff", "#92f2ff", "#ffffff", "#ff9f71"];
+
+  for (let i = 0; i < totalBursts; i += 1) {
+    window.setTimeout(() => {
+      const burst = document.createElement("span");
+      burst.className = "cake-firework-burst";
+      burst.style.left = `${14 + Math.random() * 72}%`;
+      burst.style.top = `${8 + Math.random() * 48}%`;
+      burst.style.setProperty("--fw-scale", `${0.78 + Math.random() * 0.7}`);
+      burst.style.setProperty("--fw-rot", `${Math.random() * 45 - 22.5}deg`);
+      burst.style.setProperty("--fw-color", colors[Math.floor(Math.random() * colors.length)]);
+      cakeFireworksLayer.appendChild(burst);
+      window.setTimeout(() => burst.remove(), 1100);
+    }, i * 120);
+  }
+}
+
 function showBalloons() {
   if (balloonsCreated || !balloonLayer) {
     return;
@@ -264,11 +287,14 @@ function cutCake() {
   cakeTip.textContent = "A magical slice for a magical birthday...";
   cakeScene.classList.add("cutting");
   createCakeSparkles(30);
+  burstCakeFireworks(6);
+  window.setTimeout(() => burstCakeFireworks(5), 320);
 
   window.setTimeout(() => {
     cakeScene.classList.remove("cutting");
     cakeScene.classList.add("cut");
     burstConfetti();
+    burstCakeFireworks(8);
     showBalloons();
     cakeTip.textContent = "Happy Birthday Bhanu! Let the celebration bloom 🎉";
     triggerFinalCelebration();
